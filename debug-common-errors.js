@@ -26,8 +26,13 @@ Think about which debugging methods you found most useful and how you might appl
 
 console.log("Welcome to the bootcamp
 
-// What’s Wrong?
+// What’s Wrong?Error is SyntaxError: Invalid or unexpected token
+//I read the error Message
+console.log("Welcome to the bootcamp");
 
+//after fixing error the result is 
+// $ node main.js
+//Welcome to the bootcamp
 
 // Program B
 // Description:
@@ -40,6 +45,13 @@ for (let i = 0; i < numbers.length; i++) {
 }
 
 // What’s Wrong?
+//when I ececute this program I got $ node main.js
+4
+8
+NaN 
+//code is correct but runtime time error has to occurs 
+//because one value in the array is string .when it is
+ //multiplied by 2 the result is NaN.
 
 
 
@@ -59,4 +71,20 @@ function isPrime(num) {
 
 console.log(isPrime(7)); // Expected true but gets false
 
-// What’s Wrong?
+// What’s Wrong?Its LogicError because when the program is executed result is false showing incorrect result, that means 7 is not prime but 7 is prime.so logic is wrong.
+//In the logic second if condition if num%i===0 then number is not prime so it has to return false and if condition is not satisfied then it is prime.returns true.
+//corrected code is:
+function isPrime(num) {
+  if (num < 2) return false;
+  for (let i = 2; i < num; i++) {
+    if (num % i === 0) {
+      return false;  // Supposed to indicate num is NOT prime
+    }
+  }
+  return true; // Supposed to indicate num IS prime
+}
+
+console.log(isPrime(7)); // Expected true but gets false
+
+
+
